@@ -30,6 +30,8 @@ export default defineComponent({
     };
 
     const onChangeWalletStatus = () => {
+      console.log("RootActionType - ", RootActionType);
+      console.log("WalletActionType - ", WalletActionType);
       currentStore.dispatch(WalletActionType.ChangeWalletActivation, true);
     };
 

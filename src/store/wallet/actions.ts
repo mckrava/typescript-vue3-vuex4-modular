@@ -16,11 +16,10 @@ export const actions: ActionTree<WalletState, MergedState> & WalletActions = {
     { commit, state, dispatch },
     isActive
   ) {
-    // dispatch(RootActionType.ProcessDummyVar, true);
-    console.log("state - ", state);
-    // commit(WalletMutationType.SetWalletStatus, {
-    //   ...state.walletStatus,
-    //   active: isActive,
-    // });
+    dispatch(RootActionType.ProcessDummyVar, true);
+    commit(WalletMutationType.SetWalletStatus, {
+      ...state.walletStatus,
+      active: isActive,
+    });
   },
 };

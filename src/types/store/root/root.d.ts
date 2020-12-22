@@ -42,8 +42,8 @@ type RootMutations = {
 // =============================== ACTIONS =====================================
 
 enum RootActionType {
-  ProcessDummyVar = "PROCESS_DUMMY_VAR",
-  UpdateAccountsList = "CHANGE_WALLET_ACTIVATION",
+  ProcessDummyVar = "ROOT__PROCESS_DUMMY_VAR",
+  UpdateAccountsList = "ROOT__UPDATE_ACCOUNTS_LIST",
 }
 
 type RootActionAugments = Omit<

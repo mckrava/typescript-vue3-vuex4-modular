@@ -15,5 +15,7 @@ export enum RootMutationType {
 
 export enum RootActionType {
   ProcessDummyVar = "PROCESS_DUMMY_VAR",
-  UpdateAccountsList = "CHANGE_WALLET_ACTIVATION",
+  UpdateAccountsList = "UPDATE_ACCOUNTS_LIST",
 }
+
+

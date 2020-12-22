@@ -24,10 +24,10 @@ type WalletGetters = {
 
 // =============================== MUTATION ====================================
 
-enum WalletMutationType {
-  SetWalletStatus = "SET_WALLET_STATUS",
-  SetIsWallet = "SET_IS_WALLET",
-}
+// enum WalletMutationType {
+//   SetWalletStatus = "SET_WALLET_STATUS",
+//   SetIsWallet = "SET_IS_WALLET",
+// }
 
 type WalletMutations = {
   [WalletMutationType.SetWalletStatus](
@@ -39,10 +39,10 @@ type WalletMutations = {
 
 // =============================== ACTIONS =====================================
 
-enum WalletActionType {
-  ChangeWalletStatus = "CHANGE_WALLET_STATUS",
-  ChangeWalletActivation = "CHANGE_WALLET_ACTIVATION",
-}
+// enum WalletActionType {
+//   ChangeWalletStatus = "CHANGE_WALLET_STATUS",
+//   ChangeWalletActivation = "CHANGE_WALLET_ACTIVATION",
+// }
 
 type WalletActionAugments = Omit<
   ActionContext<WalletState, MergedState>,

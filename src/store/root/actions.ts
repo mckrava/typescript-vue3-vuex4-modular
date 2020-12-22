@@ -1,6 +1,9 @@
 import { ActionTree } from "vuex";
 
-import { RootActionType, RootMutationType } from "@/types/store/storeTypes";
+import {
+  RootActionType,
+  RootMutationType,
+} from "@/types/store/storeTypes.ts";
 
 export const actions: ActionTree<RootState, MergedState> & RootActions = {
   [RootActionType.ProcessDummyVar]({ commit, state, rootState }, newValue) {
