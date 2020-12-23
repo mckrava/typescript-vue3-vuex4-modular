@@ -1,8 +1,3 @@
-// import { ActionContext } from "vuex";
-/// <reference lib="vuex.ActionContext" />
-
-// import { WalletActionType, WalletMutationType } from "@/store/storeTypes.ts";
-
 // ================================= STATE =====================================
 
 type WalletStatus = {
@@ -24,25 +19,15 @@ type WalletGetters = {
 
 // =============================== MUTATION ====================================
 
-// enum WalletMutationType {
-//   SetWalletStatus = "SET_WALLET_STATUS",
-//   SetIsWallet = "SET_IS_WALLET",
-// }
-
 type WalletMutations = {
-  [WalletMutationType.SetWalletStatus](
+  SET_WALLET_STATUS__WALLET(
     state: WalletState,
     walletStatus: WalletStatus
   ): void;
-  [WalletMutationType.SetIsWallet](state: WalletState, payload: boolean): void;
+  SET_IS_WALLET__WALLET(state: WalletState, payload: boolean): void;
 };
 
 // =============================== ACTIONS =====================================
-
-// enum WalletActionType {
-//   ChangeWalletStatus = "CHANGE_WALLET_STATUS",
-//   ChangeWalletActivation = "CHANGE_WALLET_ACTIVATION",
-// }
 
 type WalletActionAugments = Omit<
   ActionContext<WalletState, MergedState>,
@@ -55,11 +40,11 @@ type WalletActionAugments = Omit<
 };
 
 type WalletActions = {
-  [WalletActionType.ChangeWalletStatus](
+  changeWalletStatusSMWallet(
     context: WalletActionAugments,
     newStatusData: WalletStatus
   ): void;
-  [WalletActionType.ChangeWalletActivation](
+  changeWalletActivationSMWallet(
     context: WalletActionAugments,
     isActive: boolean
   ): Promise;

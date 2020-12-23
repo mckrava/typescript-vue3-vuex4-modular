@@ -13,7 +13,6 @@
 import { defineComponent } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import { useStore } from "@/store";
-import { RootActionType, WalletActionType } from "@/types/store/storeTypes";
 
 export default defineComponent({
   name: "Home",
@@ -26,13 +25,11 @@ export default defineComponent({
     console.log("currentStore - ", currentStore);
 
     const onProcessDummyVar = () => {
-      currentStore.dispatch(RootActionType.ProcessDummyVar, true);
+      currentStore.dispatch("processDummyVarSMRoot", true);
     };
 
     const onChangeWalletStatus = () => {
-      console.log("RootActionType - ", RootActionType);
-      console.log("WalletActionType - ", WalletActionType);
-      currentStore.dispatch(WalletActionType.ChangeWalletActivation, true);
+      currentStore.dispatch("changeWalletActivationSMWallet", true);
     };
 
     return {

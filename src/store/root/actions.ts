@@ -1,25 +1,17 @@
 import { ActionTree } from "vuex";
 
-import {
-  RootActionType,
-  RootMutationType,
-} from "@/types/store/storeTypes.ts";
-
 export const actions: ActionTree<RootState, MergedState> & RootActions = {
-  [RootActionType.ProcessDummyVar]({ commit, state, rootState }, newValue) {
+  processDummyVarSMRoot({ commit, state, rootState }, newValue) {
     console.log(
       "processDummyVar --- rootState.wallet.walletStatus",
       rootState.wallet.walletStatus
     );
     console.log("processDummyVar --- state.dummyRootVar", state.dummyRootVar);
 
-    commit(RootMutationType.SetDummyRootVar, newValue);
+    commit("SET_DUMMY_ROOT_VAR__ROOT", newValue);
   },
 
-  [RootActionType.UpdateAccountsList]({ commit, state }, newListData) {
-    commit(RootMutationType.SetAccountList, [
-      ...state.accountList,
-      ...newListData,
-    ]);
+  updateAccountsListSMRoot({ commit, state }, newListData) {
+    commit("SET_ACCOUNT_LIST__ROOT", [...state.accountList, ...newListData]);
   },
 };

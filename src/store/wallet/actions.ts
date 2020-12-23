@@ -1,23 +1,14 @@
 import { ActionTree } from "vuex";
 
-import {
-  WalletActionType,
-  WalletMutationType,
-  RootActionType,
-} from "@/types/store/storeTypes";
-
 export const actions: ActionTree<WalletState, MergedState> & WalletActions = {
-  [WalletActionType.ChangeWalletStatus]({ commit, state }, newStatusData) {
+  changeWalletStatusSMWallet({ commit, state }, newStatusData) {
     console.log("state.walletStatus", state.walletStatus);
-    commit(WalletMutationType.SetWalletStatus, newStatusData);
+    commit('SET_WALLET_STATUS__WALLET', newStatusData);
   },
 
-  async [WalletActionType.ChangeWalletActivation](
-    { commit, state, dispatch },
-    isActive
-  ) {
-    dispatch(RootActionType.ProcessDummyVar, true);
-    commit(WalletMutationType.SetWalletStatus, {
+  async changeWalletActivationSMWallet({ commit, state, dispatch }, isActive) {
+    dispatch("processDummyVarSMRoot", true);
+    commit("SET_WALLET_STATUS__WALLET", {
       ...state.walletStatus,
       active: isActive,
     });

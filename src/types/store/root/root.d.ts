@@ -1,10 +1,3 @@
-// import { ActionContext } from "vuex";
-/// <reference lib="vuex.ActionContext" />
-// import {
-//   RootMutationType,
-//   RootActionType,
-// } from "@/store/storeTypes.ts";
-
 // ================================= STATE =====================================
 
 type AccountInfo = {
@@ -26,25 +19,12 @@ type RootGetters = {
 
 // =============================== MUTATION ====================================
 
-enum RootMutationType {
-  SetDummyRootVar = "SET_DUMMY_ROOT_VAR",
-  SetAccountList = "SET_ACCOUNT_LIST",
-}
-
 type RootMutations = {
-  [RootMutationType.SetDummyRootVar](state: RootState, payload: boolean): void;
-  [RootMutationType.SetAccountList](
-    state: RootState,
-    accounts: AccountInfo[]
-  ): void;
+  SET_DUMMY_ROOT_VAR__ROOT(state: RootState, payload: boolean): void;
+  SET_ACCOUNT_LIST__ROOT(state: RootState, accounts: AccountInfo[]): void;
 };
 
 // =============================== ACTIONS =====================================
-
-enum RootActionType {
-  ProcessDummyVar = "ROOT__PROCESS_DUMMY_VAR",
-  UpdateAccountsList = "ROOT__UPDATE_ACCOUNTS_LIST",
-}
 
 type RootActionAugments = Omit<
   ActionContext<RootState, MergedState>,
@@ -59,11 +39,8 @@ type RootActionAugments = Omit<
 };
 
 type RootActions = {
-  [RootActionType.ProcessDummyVar](
-    context: RootActionAugments,
-    newValue: boolean
-  ): void;
-  [RootActionType.UpdateAccountsList](
+  processDummyVarSMRoot(context: RootActionAugments, newValue: boolean): void;
+  updateAccountsListSMRoot(
     context: RootActionAugments,
     newListData: AccountInfo[]
   ): void;
